@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Task 1 · Turn-based battle</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/task1.js" defer></script>
+</head>
+<body>
+<header class="site-header"><div class="wrap"><a class="brand" href="index.html">Assignment 5 · JavaScript</a><nav aria-label="Main"><a href="task1.html" aria-current="page">Task 1 · Battle</a><a href="task2.html">Task 2 · Kanban</a><a href="task3.html">Task 3 · Ticket form</a></nav></div></header>
+<main class="wrap">
+<h1>Turn-based battle</h1>
+<p class="lead">Attack, defend (halves the next hit) or heal. Defeat the enemy before your HP runs out.</p>
+<section class="arena" aria-label="Arena">
+  <div class="panel fighter" id="hero-card">
+    <h2>Hero <span class="badge" id="hero-defending" hidden>Defending</span></h2>
+    <progress id="hero-bar" value="100" max="100" aria-label="Hero health"></progress>
+    <p class="hp-text" id="hero-hp"></p>
+  </div>
+  <div class="panel fighter" id="enemy-card">
+    <h2>Enemy</h2>
+    <progress id="enemy-bar" value="100" max="100" aria-label="Enemy health"></progress>
+    <p class="hp-text" id="enemy-hp"></p>
+  </div>
+</section>
+<p id="message" class="message" role="status" aria-live="polite"></p>
+<div id="result" class="result" hidden></div>
+<div class="actions" id="actions">
+  <button class="btn" type="button" data-action="attack">Attack</button>
+  <button class="btn btn-secondary" type="button" data-action="defend">Defend</button>
+  <button class="btn btn-secondary" type="button" data-action="heal" id="heal-btn">Heal</button>
+  <button class="btn btn-danger" type="button" id="restart">New battle</button>
+</div>
+<section class="panel" aria-labelledby="log-title">
+  <h2 id="log-title">Last 5 actions</h2>
+  <ol class="log" id="log"></ol>
+</section>
+</main>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Task 3 · Ticket builder</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/task3.js" defer></script>
+</head>
+<body>
+<header class="site-header"><div class="wrap"><a class="brand" href="index.html">Assignment 5 · JavaScript</a><nav aria-label="Main"><a href="task1.html">Task 1 · Battle</a><a href="task2.html">Task 2 · Kanban</a><a href="task3.html" aria-current="page">Task 3 · Ticket form</a></nav></div></header>
+<main class="wrap">
+<h1>Ticket builder</h1>
+<p class="lead">Fill in the form. The ticket preview updates while you type.</p>
+<div class="layout">
+  <form id="ticket-form" class="panel" novalidate>
+    <div id="summary" class="summary" role="alert" tabindex="-1" hidden></div>
+    <div class="field"><label for="f-event">Event</label>
+      <select id="f-event" name="event" required aria-describedby="err-event"></select>
+      <p class="error" id="err-event"></p></div>
+    <div class="field"><label for="f-date">Date</label>
+      <input id="f-date" name="date" type="date" required aria-describedby="hint-date err-date">
+      <p class="hint" id="hint-date">Choose an event to see its dates.</p>
+      <p class="error" id="err-date"></p></div>
+    <div class="field"><label for="f-type">Ticket type</label>
+      <select id="f-type" name="type" required aria-describedby="err-type"></select>
+      <p class="error" id="err-type"></p></div>
+    <div class="field"><label for="f-quantity">Quantity</label>
+      <input id="f-quantity" name="quantity" type="number" min="1" max="10" step="1" inputmode="numeric" required aria-describedby="hint-quantity err-quantity">
+      <p class="hint" id="hint-quantity">From 1 to 10 tickets.</p>
+      <p class="error" id="err-quantity"></p></div>
+    <div class="field"><label for="f-fullName">Full name</label>
+      <input id="f-fullName" name="fullName" type="text" required minlength="5" maxlength="40" autocomplete="name" aria-describedby="err-fullName">
+      <p class="error" id="err-fullName"></p></div>
+    <div class="field"><label for="f-email">Email</label>
+      <input id="f-email" name="email" type="email" required autocomplete="email" aria-describedby="err-email">
+      <p class="error" id="err-email"></p></div>
+    <div class="field"><label for="f-promo">Promo code (optional)</label>
+      <input id="f-promo" name="promo" type="text" maxlength="20" pattern="[A-Za-z0-9]*" autocomplete="off" aria-describedby="err-promo">
+      <p class="error" id="err-promo"></p></div>
+    <div class="form-actions">
+      <button class="btn" type="submit">Book tickets</button>
+      <button class="btn btn-secondary" type="reset" id="reset-btn">Clear form</button>
+    </div>
+  </form>
+  <aside class="preview" aria-label="Ticket preview">
+    <div class="panel">
+      <h2>Live preview</h2>
+      <div class="ticket" id="preview"></div>
+    </div>
+    <div id="result" aria-live="polite"></div>
+  </aside>
+</div>
+</main>
+</body>
+</html>

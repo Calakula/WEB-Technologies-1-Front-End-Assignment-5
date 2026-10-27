@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Task 2 · Kanban board</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/task2.js" defer></script>
+</head>
+<body>
+<header class="site-header"><div class="wrap"><a class="brand" href="index.html">Assignment 5 · JavaScript</a><nav aria-label="Main"><a href="task1.html">Task 1 · Battle</a><a href="task2.html" aria-current="page">Task 2 · Kanban</a><a href="task3.html">Task 3 · Ticket form</a></nav></div></header>
+<main class="wrap">
+<h1>Kanban board</h1>
+<p class="lead">Move cards between columns. The “In progress” column holds at most 3 cards.</p>
+<div class="toolbar">
+  <label>Search by title <input id="search" type="search" placeholder="e.g. form"></label>
+  <label>Tag <select id="filter-tag"></select></label>
+  <label>Sort by priority
+    <select id="sort">
+      <option value="none">Default order</option>
+      <option value="high">High first</option>
+      <option value="low">Low first</option>
+    </select>
+  </label>
+  <button class="btn btn-secondary" type="button" id="reset-filters">Reset filters</button>
+</div>
+<div class="progress-box">
+  <p id="progress-text"></p>
+  <progress id="progress" value="0" max="1" aria-label="Finished cards"></progress>
+</div>
+<p id="message" class="message" role="status" aria-live="polite"></p>
+<div id="empty-board" class="empty-board" hidden></div>
+<div id="board" class="board"></div>
+</main>
+</body>
+</html>
